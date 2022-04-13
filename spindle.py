@@ -1,3 +1,3 @@
 '''
-Création des valeurs support du fuseau agrégeant les données. Génération d'un objet 3D
+Agrégation SLAM/CML les données. Génération d'un objet 3D (unity ou unreal), Arcore ?
 '''
