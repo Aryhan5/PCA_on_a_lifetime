@@ -38,8 +38,3 @@ def identify():
 
 def scale(map1, map2):
     print()
-
-img = cv2.imread('../stockapril.jpg')
-gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-tags = detect(gray)
-print(tags)
