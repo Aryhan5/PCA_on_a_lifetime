@@ -13,7 +13,3 @@ def generate_tag_stickers_data(data, path):
     return rt
 
 
-
-xls = pd.read_excel('../Habits_Clustering/Habitudes.xlsx')    
-xls_data = generate_tag_stickers_data(xls, 'D:\\\\Work\\\\Ergonautique\\\\PCA_on_a_lifetime\\\\tags\\')
-xls_data.to_excel("etiquettes.xlsx")
