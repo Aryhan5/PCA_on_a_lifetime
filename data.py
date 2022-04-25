@@ -25,8 +25,11 @@ def remap(observed_data, sheet_data):
     print()
 
 def export(new_data, sheet_path, create=False):
-    print()
-
-hb = import_from_datasheet("./Habitudes.xlsx")
+    if create:
+        open(sheet_path, "x")
+    xls = pd.read_excel(sheet_path)
+    xls.set_index('ID')    
+    df = pd.merge(xls, new_data, on="ID", how="outer")
+    df.to_excel("Mapped_"+sheet_path)
 
 
