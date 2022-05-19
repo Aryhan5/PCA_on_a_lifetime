@@ -2,8 +2,8 @@
 Lecture - écriture, pré et post-processing de données
 '''
 
-import numpy as np
 import pandas as pd
+import gtsam as gtsm
 
 def generate_tag_stickers_data(data, path):
     new_col = data["ID"].astype(str)

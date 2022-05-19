@@ -32,9 +32,21 @@ def detect(picture):
     tags = apt_detector.detect(picture)
     return tags
 
+def import_picture(path):
+    image = cv2.imread(path)
+    grey = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    return grey
 
-def identify():
-    print()
+def extract_from_observation(raw_results):
+    cleaned_data = list(map(lambda x : {"ID": x.tag_id, "centroid":x.center}, raw_results))
+    df = pd.DataFrame(cleaned_data)
+    df.set_index('ID')
+    return df
 
-def scale(map1, map2):
-    print()
+def get_coord_from_picture(path):
+    img = import_picture(path)
+    det_results = detect(img)
+    coord = extract_from_observation(det_results)
+    return coord
+
+
